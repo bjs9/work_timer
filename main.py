@@ -9,31 +9,28 @@ import sys
 
 
 
-# Создаём объект приложения (обязательный шаг для любого PySide6 GUI)
 app = QApplication(sys.argv)
 
-# Загружаем стили из внешнего файла
-with open(f"{c.ASSETS_DIR}/style.qss", "r") as file:
+with open(c.STYLE_PATH, "r") as file:
     app.setStyleSheet(file.read())
 
-# Создаём окно (родительский виджет)
-window = QWidget()
-window.setWindowTitle("Work Timer")
-window.setWindowIcon(QIcon(f"{c.ASSETS_DIR}/icon.png"))
 
-# Устанавливаем фиксированный размер окна
-window.setFixedSize(400, 200)  # ширина: 400, высота: 200
-
-# Отключаем кнопку "Развернуть на весь экран"
 flags = Qt.Window | Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint
+
+window = QWidget()
+window.setWindowTitle(c.WINDOW_TITLE)
+window.setWindowIcon(QIcon(c.ICON_PATH))
+window.setFixedSize(c.WINDOW_WIDTH, c.WINDOW_HEIGHT)
 window.setWindowFlags(flags)
 
-# Создаём простой виджет — текстовую надпись
-label = QLabel("Hello, World!", parent=window)
-label.setAlignment(Qt.AlignCenter)  # Центрируем текст
 
-# Показываем эту надпись в окне
+
+
+label = QLabel("Hello, World!", parent=window)
+label.setAlignment(Qt.AlignCenter)
+
+
 window.show()
 
-# Запускаем главный цикл приложения
+
 sys.exit(app.exec())

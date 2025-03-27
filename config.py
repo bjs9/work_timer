@@ -1,1 +1,10 @@
-ASSETS_DIR = 'assets'
+WINDOW_WIDTH  = 400
+WINDOW_HEIGHT = 600
+
+WINDOW_TITLE = "Work Timer"
+
+
+
+ASSETS_DIR = "assets"
+ICON_PATH  = f"{ASSETS_DIR}/icon.png"
+STYLE_PATH = f"{ASSETS_DIR}/style.qss"

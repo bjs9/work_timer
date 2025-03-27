@@ -12,6 +12,7 @@ class MainWindow(QWidget):
     def __init__(self, show:bool=True):
         super().__init__()
 
+        # Window settings
         flags = Qt.Window | Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint
 
         self.setWindowTitle(c.WINDOW_TITLE)
@@ -19,8 +20,17 @@ class MainWindow(QWidget):
         self.setFixedSize(c.WINDOW_WIDTH, c.WINDOW_HEIGHT)
         self.setWindowFlags(flags)
 
-        label = QLabel("Hello, World!", parent=self)
-        label.setAlignment(Qt.AlignCenter)
+        # Layout for the window
+        layout = QVBoxLayout()
+        layout.setObjectName("MainLayout") # for qss
+        self.setLayout(layout)
+
+        # Main label with digits
+        self.timer_label = QLabel("00:00:00.000")
+        self.timer_label.setObjectName("TimerLabel") # for qss
+        self.timer_label.setAlignment(Qt.AlignHCenter)
+        # self.timer_label.setContentsMargins(0, 80, 0, 0)
+        layout.addWidget(self.timer_label)
 
         if show:
             self.show()

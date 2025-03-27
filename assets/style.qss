@@ -1,10 +1,14 @@
+/*  */
 QWidget {
-    background-color: #2b2b2b;
+    background-color: #1b1b1b;
     color: #ffffff;
     font-family: Arial;
     font-size: 14px;
 }
 
-QLabel {
-    qproperty-alignment: AlignCenter;
+/* MainWindow */
+#TimerLabel {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 100px;
 }

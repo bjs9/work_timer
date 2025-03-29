@@ -1,14 +1,24 @@
 /*  */
 QWidget {
     background-color: #1b1b1b;
-    color: #ffffff;
+    color: #fff;
     font-family: Arial;
     font-size: 14px;
 }
 
 /* MainWindow */
-#TimerLabel {
+QLabel#TimerLabel {
     font-size: 36px;
     font-weight: bold;
-    margin-top: 100px;
+    /* border: 1px solid red; /* DEBUG */
+}
+
+QPushButton#StartButton {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    /* border: 1px solid lime; /* DEBUG */
 }

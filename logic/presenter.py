@@ -26,12 +26,12 @@ class TimerPresenter:
     def toggle(self) -> None:
         if self.is_running:
             self.timer.stop()
-            self.view.update_button_text("Start")
+            self.view.update_button_text("START")
             self.is_running = False
         else:
             self.model.reset()
             self.timer.start()
-            self.view.update_button_text("Stop")
+            self.view.update_button_text("STOP")
             self.is_running = True
 
     

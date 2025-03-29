@@ -31,14 +31,20 @@ class MainWindow(QWidget):
         # Main label with digits
         self.timer_label = QLabel("00:00:00.00")
         self.timer_label.setObjectName("TimerLabel") # for qss
-        self.timer_label.setAlignment(Qt.AlignHCenter)
-        layout.addWidget(self.timer_label)
+        self.timer_label.setMinimumHeight(45)
+        self.timer_label.setContentsMargins(0, 0, 0, 20) # left, top, right, bottom
 
         # Start/Stop button
-        self.start_button = QPushButton("Start")
-        self.start_button.setObjectName("MainButton")
+        self.start_button = QPushButton("START")
+        self.start_button.setObjectName("StartButton")
+        self.start_button.setFixedHeight(35)
+        self.start_button.setFixedWidth(200)
         self.start_button.clicked.connect(self.presenter.toggle)
-        layout.addWidget(self.start_button)
+
+        # Screen assembly
+        layout.addWidget(self.timer_label, alignment=Qt.AlignBottom | Qt.AlignHCenter, stretch=1)
+        layout.addWidget(self.start_button, alignment=Qt.AlignTop | Qt.AlignHCenter, stretch=1)
+        layout.addWidget(QLabel("00:00:00.00"), alignment=Qt.AlignHCenter, stretch=2)
 
         if show:
             self.show()

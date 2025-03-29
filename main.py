@@ -8,14 +8,15 @@ import sys
 
 
 
-# Start
-app = QApplication(sys.argv)
+if __name__ == "__main__":
+    # Start
+    app = QApplication(sys.argv)
 
-# Set window icon
-with open(c.STYLE_PATH, "r") as file:
-    app.setStyleSheet(file.read())
+    # Set window icon
+    with open(c.STYLE_PATH, "r") as file:
+        app.setStyleSheet(file.read())
 
-main_window = MainWindow()
+    main_window = MainWindow()
 
-# End
-sys.exit(app.exec())
+    # End
+    sys.exit(app.exec())

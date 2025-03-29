@@ -5,3 +5,5 @@ WINDOW_HEIGHT = 600 # px
 ASSETS_DIR = "assets"
 ICON_PATH  = f"{ASSETS_DIR}/icon.png"
 STYLE_PATH = f"{ASSETS_DIR}/style.qss"
+
+TIMER_INTERVAL = 10
